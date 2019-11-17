@@ -15,10 +15,11 @@
      <blockquote>
        <% if place.comments.last.humanized_rating.present? %>
          <b><%= place.comments.last.humanized_rating %></b> -
-        <% end %>
+       <% end %>
        <%= place.comments.last.message %>
        <small><%= place.comments.last.user.email %></small>
      </blockquote>
     </div>
+    <% end %>
 
 <% end %>

@@ -20,10 +20,10 @@
     <div id="map"></div>
 
    <% if @place.latitude.present? && @place.longitude.present? %>
-
+    
     <script>
-
       function initMap() {
+        console.log('HERE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
         var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
 
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -37,10 +37,12 @@
           title: 'Hello World!'
         });
       }
+
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzRLgjtp6doXKiGi2PgQNMxavhtirST98=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNc2CTmNHDcEuOqhM2a220wnMMMWg4VMc=initMap">
     </script>
+    
 
     <div id="map"></div>
    <% end %>
