@@ -23,7 +23,6 @@
     
     <script>
       function initMap() {
-        console.log('HERE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
         var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
 
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -40,7 +39,8 @@
 
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNc2CTmNHDcEuOqhM2a220wnMMMWg4VMc=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNc2CTmNHDcEuOqhM2a220wnMMMWg4VMc
+&callback=initMap">
     </script>
     
 
@@ -61,6 +61,11 @@
   <%= f.input :message %>
   <%= f.input :rating, as: :select, collection: Comment::RATINGS %>
   <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
+<% end %>
+
+<%= simple_form_for @photos, url: '#' do |f| %>
+  <%= f.input :text %>
+  <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
 <% end %>
 
 <h1>Comments</h1>
